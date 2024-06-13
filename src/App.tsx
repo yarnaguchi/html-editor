@@ -18,6 +18,7 @@ export const App: FC = () => {
       <textarea value={code} onChange={onChange} rows={5} cols={33} />
 
       {/*
+      https://uiwjs.github.io/react-textarea-code-editor/
       これは遊びでやってみただけ。
       これを使うと npm run start で警告が出てるのが気になる。
       他のライブラリを使うなら「react syntax highlighter」でググるといいかも。
@@ -30,8 +31,7 @@ export const App: FC = () => {
         padding={10}
       />
 
-      {/* <iframe> はうまく内部のhtmlを更新できなかったのでやめた */}
-      <div className="preview" dangerouslySetInnerHTML={{ __html: code }} />
+      <iframe className="preview" srcDoc={code} title={'preview'}/>
     </div>
   );
 };
